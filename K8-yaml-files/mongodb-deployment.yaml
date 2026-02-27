@@ -4,7 +4,7 @@ metadata:
   name: veg-mongodb
   namespace: kiran-ns
 spec:
-  replicas: 5
+  replicas: 2
   serviceName: "mongodb"
   selector:
     matchLabels:
