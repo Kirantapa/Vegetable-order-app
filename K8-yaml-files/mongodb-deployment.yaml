@@ -4,7 +4,7 @@ metadata:
   name: veg-mongodb
   namespace: kiran-ns
 spec:
-  replicas: 5
+  replicas: 2
   serviceName: "mongodb"
   selector:
     matchLabels:
@@ -25,12 +25,4 @@ spec:
               configMapKeyRef:
                 name: configmap
                 key: MONGO_INITDB_DATABASE
-  volumeClaimTemplates:  # it is referencing pvc automatically instead of refering pvc manually in the pod or yaml file
-    - metadata:
-        name: mongo-data
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        storageClassName: veg-sc
-        resources:
-          requests:
-            storage: 1Gi
+  
